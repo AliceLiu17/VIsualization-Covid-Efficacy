@@ -25,3 +25,7 @@ To run streamlit, on the terminal enter: `streamlit run ___` (the ___ is the fil
 
 - `heatmap_breakthrough.py` = Analyzing % of breakthrough cases for each country based on vaccine used analyzing to see countries with high breakthrough rates and other countries who use the same vaccine. We want to filter based on strains, WHO_region, and Brand
   - To run `heatmap_breakthrough.py` enter `streamlit run streamlit_files/heatmap_breakthrough.py`
+
+- `bubble_protection_susceptible.py` = Analyzing which countries have low and high levels of protection against severe disease and infection, and how these levels of protection relation to the size of the population. The size of the bubbles will help us understand which countries have larger populations that are potentially at risk for breakthrough infections. The color coding of the bubbles by WHO region can help you understand how different regions of the world are performing in terms of vaccine efficacy and breakthrough infections. It can also help you identify areas where more attention or resources may be needed to improve vaccine distribution or effectiveness. 
+  - To run `bubble_protection_susceptible.py` enter `streamlit run streamlit_files/bubble_protection_susceptible.py`
+
