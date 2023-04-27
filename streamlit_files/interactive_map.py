@@ -5,7 +5,12 @@ import folium
 from streamlit_folium import st_folium
 
 st.title("Visualization: Project 1")
-st.write("For more information, data, and visualization code: [Github link](https://github.com/AliceLiu17/Visualization-Project-1)")
+st.subheader("Vaccine Global Analysis : Interactive Map Chart")
+st.write("For more information, data, and visualization code: [Github link](https://github.com/AliceLiu17/VIsualization-Covid-Efficacy)\n\n")
+st.write("\n")
+st.write("Analysis on where vaccines are administered globally; users are able to filter the vaccine on the map to see where each vaccine is located. User has the ability to zoom in and out of the map")
+st.write("Feel free to ZOOM IN/ZOOM OUT of the map")
+st.write("\n")
 
 def display_map(df, vaccine_filter):
     country_filtered = []
@@ -42,8 +47,8 @@ def display_map(df, vaccine_filter):
         "Moderna" : 17,
         "Moderna - Spikevax" : 18,
         "Moderna - mRNA-1273" : 19,
-        "Moderna â€“ Spikevax Bivalent Original/Omicron - Generic" : 20,
-        "Moderna â€“ Spikevax Bivalent Original/Omicron BA.1" : 21,
+        "Moderna Spikevax Bivalent Original/Omicron - Generic" : 20,
+        "Moderna Spikevax Bivalent Original/Omicron BA.1" : 21,
         "Novavax - Covavax" : 22,
         "Novavax-NUVAXOVID" : 23,
         "Pfizer BioNTech - Comirnaty" : 24,
@@ -187,8 +192,8 @@ if __name__ == "__main__":
 #         "Moderna" : 17,
 #         "Moderna - Spikevax" : 18,
 #         "Moderna - mRNA-1273" : 19,
-#         "Moderna â€“ Spikevax Bivalent Original/Omicron - Generic" : 20,
-#         "Moderna â€“ Spikevax Bivalent Original/Omicron BA.1" : 21,
+#         "Moderna Spikevax Bivalent Original/Omicron - Generic" : 20,
+#         "Moderna Spikevax Bivalent Original/Omicron BA.1" : 21,
 #         "Novavax - Covavax" : 22,
 #         "Novavax-NUVAXOVID" : 23,
 #         "Pfizer BioNTech - Comirnaty" : 24,

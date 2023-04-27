@@ -3,13 +3,14 @@ import pandas as pd
 import plotly.express as px
 
 st.title("Visualization: Project 1")
-st.write("For more information, data, and visualization code: [Github link](https://github.com/AliceLiu17/Visualization-Project-1)")
-st.write("Bubble chart of unique vaccines and amount of countries using each vaccine")
+st.subheader("Vaccine Global Analysis : Bubble Chart")
+st.write("For more information, data, and visualization code: [Github link](https://github.com/AliceLiu17/VIsualization-Covid-Efficacy)")
+st.write("HOVER FOR 2 ARROW PINCHING BUTTON: TO ENTER FULL SCREEN TO VIEW FULL DATA!")
+
 
 def main():
     df_original = pd.read_csv("data/Covid Protection Efficacy By Country - Averaged Out (FINAL DATASET).csv")
     df_vaccine_total_country = pd.read_csv("data/Vaccine_total_countries.csv")
-    st.write(df_vaccine_total_country)
 
     df_vaccine_total_country["WHO Region"] = df_original["WHO_REGION"]
 
@@ -36,7 +37,12 @@ def main():
                       xaxis_tickfont_size=12, width=1000, height=800,
                       margin=dict(l=50, r=0, b=300), xaxis_tickangle=45)
     
-    fig.show()
+    st.plotly_chart(fig)
+
+    st.write("\n")
+    st.write("Dataset: ")
+    st.write("\n")
+    st.write(df_vaccine_total_country)
 
 if __name__ == "__main__":
     main()

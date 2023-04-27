@@ -8,10 +8,16 @@ import plotly.express as px
 # this will help us see the overall vaccination coverage in different regions and countries
 # we will filter the bar chart through filtering the WHO_region
 
+st.title("Visualization: Project 1")
+st.subheader("Population Analysis : Bar Chart")
+st.write("For more information, data, and visualization code: [Github link](https://github.com/AliceLiu17/VIsualization-Covid-Efficacy)")
+st.write("\n")
+st.write("Bubble chart of unique vaccines and amount of countries using each vaccine")
+st.write("HOVER FOR 2 ARROW PINCHING BUTTON: TO ENTER FULL SCREEN TO VIEW FULL DATA!")
+
 def display_population_bar(df, WHO_region):
     filtered_df = df[df["WHO_REGION"] == WHO_region]
     colors = {'% Population NOT VACCINATED': '#1f77b4', '% Population vaccinated': '#ff7f0e'}
-
 
     fig = px.bar(filtered_df, 
                  y = "COUNTRY", 
