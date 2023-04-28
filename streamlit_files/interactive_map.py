@@ -4,13 +4,63 @@ import pandas as pd
 import folium
 from streamlit_folium import st_folium
 
-st.title("Visualization: Project 1")
+sub_font = "<style>body {font-family: 'Times New Roman', Times, serif;} </style>"
+
+st.write(f"{sub_font}<h2><u>VISUALIZATION: Project 1</u>    [PAGE 2]</h2>", unsafe_allow_html = True)
 st.subheader("Vaccine Global Analysis : Interactive Map Chart")
-st.write("For more information, data, and visualization code: [Github link](https://github.com/AliceLiu17/VIsualization-Covid-Efficacy)\n\n")
-st.write("\n")
-st.write("Analysis on where vaccines are administered globally; users are able to filter the vaccine on the map to see where each vaccine is located. User has the ability to zoom in and out of the map")
+st.write("For more information, data, and visualization code: [Github link](https://github.com/AliceLiu17/VIsualization-Covid-Efficacy)")
 st.write("Feel free to ZOOM IN/ZOOM OUT of the map")
-st.write("\n")
+st.write('---')
+
+st.write(f"{sub_font}<h4> <u>Overview of Vaccine Global Analysis </u> </h4>", unsafe_allow_html = True)
+st.write("Analysis on where vaccines are administered globally (based on what the user filters) through an interactive map")
+st.write(""" 
+As stated before, the world rushed to develop and distribute vaccines to the population in order to combat the spread of the virus. 
+As a result, from the data we're given, there has been approximately 41 vaccines. An interactive map is developed to indicate where vaccines 
+are administered globally.  
+""")
+
+st.write(f"{sub_font}<h4><u>Features:</u></h4>", unsafe_allow_html = True)
+st.write(""" 
+- Filtering: User can filter on the left-hand side by choosing what vaccine they'd like to view in the map.
+- Title: will indicate what vaccine was filtered
+- Total count: counts the total countries where the filtered vaccine is administered
+- Color: Based on the filter you select, the map will color Green for regions where this vaccine is administered
+- Hover Feature: interact with the map to see what/where each country is
+- Navigating this map: you may zoom in and out of the map
+- List: a list of where each vaccine is administered and the total vaccines administered by country
+
+**IMPORTANT FEATURE:** The GeoJson file is 24.1 MB, therefore it will take a few seconds to pull the map with every 
+feature and adjustment of the map
+""")
+
+st.write(""" 
+Overall, this map can help you understnad and visualize the global distribution of vaccines and the impact they have 
+in different regions of the world.
+""")
+         
+st.write(f"{sub_font}<h4><u>Some Observations:</u></h4>", unsafe_allow_html = True)
+st.write(r"""
+- AstraZeneca - Vaxzevria, Moderna - Spikevax, Janssen - Ad26.COV 2-S, and Pfizer BioNTech - Comirnaty are the widest 
+distributed vaccine in the world with Pfizer taking the top maximum. 
+
+This now graples the question. What causes the vaccines to be more popularily distributed in comparison to others?
+
+My hypothesis will be based on some basic assumption, which is, the vaccine can be more effective. How will we know?
+We can examine columns where it shows % susceptibility. Meaning % of the population who are vaccinated but can still 
+be infected. The lower the % the more effective the vaccine is. The higher the % the less effective the vaccine is. 
+""")
+         
+st.write(f"{sub_font}<h4><u>Next Steps:</u></h4>", unsafe_allow_html = True)
+st.write(""" 
+Viewing what are the widely distributed vaccine can be difficult to view in map, since it is difficult to remember every
+value as we filter. 
+
+**NEXT STEPS:** Run file `bubble_chart.py` for easier visualization of vaccine distribution. 
+""")
+st.write('---')
+
+
 
 def display_map(df, vaccine_filter):
     country_filtered = []

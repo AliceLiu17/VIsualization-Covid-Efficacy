@@ -5,14 +5,80 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-st.title("Visualization: Project 1")
-st.subheader("Trends in vaccine efficacy and breakthrough infections : Bubble Chart")
+
+sub_font = "<style>body {font-family: 'Times New Roman', Times, serif;} </style>"
+
+st.write(f"{sub_font}<h2><u>VISUALIZATION: Project 1</u>    [PAGE 5]</h2>", unsafe_allow_html = True)
+st.subheader("Trends in vaccine efficacy and breakthrough infections : Bubble Scatter Chart")
 st.write("For more information, data, and visualization code: [Github link](https://github.com/AliceLiu17/VIsualization-Covid-Efficacy)")
-st.write("\n")
-st.write(r"Analyzing which countries have low and high levels of protection against severe disease and infection. Can understand how different regions of the world are performing in terms of vaccine efficacy and breakthrough infections. It can also help you identify areas where more attention or resources may be needed to improve vaccine distribution or effectiveness.")
-st.write("\n")
-st.write("HOVER FOR 2 ARROW PINCHING BUTTON: TO ENTER FULL SCREEN TO VIEW FULL DATA!")
-st.write("\n")
+st.write("**HOVER FOR 2 ARROW PINCHING BUTTON: TO ENTER FULL SCREEN TO VIEW FULL DATA!**")
+st.write('---')
+
+st.write(f"{sub_font}<h4> <u>Overview Vaccine Efficacy and Breakthrough Trends) </u> </h4>", unsafe_allow_html = True)
+st.write(r"""
+Analyzing which countries have low and high levels of protection against severe disease and infection. Can understand how different regions 
+of the world are performing in terms of vaccine efficacy and breakthrough infections. It can also help you identify areas where more 
+attention or resources may be needed to improve vaccine distribution or effectiveness.
+
+- The size of the bubbles will help us understand which countries have larger populations that are potentially at risk for breakthrough infections. 
+- The color coding of the bubbles by WHO region can help you understand how different regions of the world are performing in terms of vaccine 
+efficacy and breakthrough infections. 
+- It can also help you identify areas where more attention or resources may be needed to improve vaccine distribution or effectiveness. 
+""")
+
+
+st.write(f"{sub_font}<h4><u>Features:</u></h4>", unsafe_allow_html = True)
+st.write(""" 
+- Filtering: filter the data based on the selected WHO region and strain (ORIGINAL, OMICRON). These functions update the scatter 
+plot to display only the data that meets the selected criteria.
+- Bubble chart:
+    - The x-axis is the % people protected for X infection (X is filtered based on STRAIN)
+    - The y-axis is the % people protected for X severe disease (X is filtered based on STRAIN)
+    - The size of the bubble is the population size of the country
+    - The color represents the WHO region.
+    - Legend: color and its corresponding WHO_REGION
+- Hovering: when you hover over a bubble, you'll get the:
+    - Country name
+    - WHO_region 
+    - % people protected for X infection
+    - % people protected for X severe disease
+    - Total population 
+""")
+
+st.write(f"{sub_font}<h4><u>Some Observations:</u></h4>", unsafe_allow_html = True)
+st.write(r""" 
+Let's examine potential patterns or trends in COVID-19 protection efficacy across different regions and vaccine 
+strains, which could inform future vaccination efforts and public health policies.
+
+- There is a positive linear relationship between the two variables in the scatter bubble chart. Which means that as the %
+of people protected against severe disease increases, the % of people protected against infection also tends 
+to increase. This observation suggests that vaccines with higher efficacy rates against severe disease are also more 
+effective in preventing infections
+
+- The countries that are farther to the right and higher up in the chart have higher levels of protection against severe 
+disease and infection. And we do see that the larger countries trend on the middle to high levels of protection. 
+
+- To improve vaccine distribution, focus on countries with lower vaccination rates or where there are access issues. 
+We can also consider strategies for reaching populations that are hesitant or resistant to vaccination. We should also focus on
+factors that may be contributing to breakthrough infections, such as new variants of the virus or waning immunity over time. 
+
+- We should consider improving vaccine effectiveness (especially in countries in the lower levels of protection), such as 
+increasing booster shots or developing new vaccines that provide better protection against emerging variants.
+""")
+
+st.write(f"{sub_font}<h4><u>Conclusion:</u></h4>", unsafe_allow_html = True)
+st.write(""" 
+In conclusion, the most widely distributed vaccines in the world are Pfizer BioNTech - Comirnaty, AstraZeneca - Vaxzevria, 
+Moderna - Spikevax, and Janssen - Ad26.COV 2-S, with Pfizer being the most popular. These vaccines have been associated 
+with lower susceptibility rates, indicating a higher effectiveness in protecting individuals against the virus. 
+This is a positive sign for vaccine efficacy and suggests that vaccines with higher efficacy rates against severe 
+disease are also more effective in preventing infections. To improve vaccine distribution, we need to focus on 
+countries with lower vaccination rates or where there are access issues, and we need to consider strategies for 
+improving vaccine effectiveness, such as booster shots or developing new vaccines that provide better protection 
+against emerging variants. Ultimately, our goal should be to reduce the number of breakthrough infections and provide 
+adequate protection against COVID-19 for everyone.
+""")
+st.write('---')
 
 def display_bubble(df, WHO_selected, strain_selected):
     if WHO_selected != "ALL":

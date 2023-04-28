@@ -2,10 +2,44 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.title("Visualization: Project 1")
+sub_font = "<style>body {font-family: 'Times New Roman', Times, serif;} </style>"
+
+st.write(f"{sub_font}<h2><u>VISUALIZATION: Project 1</u>    [PAGE 3]</h2>", unsafe_allow_html = True)
 st.subheader("Vaccine Global Analysis : Bubble Chart")
 st.write("For more information, data, and visualization code: [Github link](https://github.com/AliceLiu17/VIsualization-Covid-Efficacy)")
-st.write("HOVER FOR 2 ARROW PINCHING BUTTON: TO ENTER FULL SCREEN TO VIEW FULL DATA!")
+st.write("**HOVER FOR 2 ARROW PINCHING BUTTON: TO ENTER FULL SCREEN TO VIEW FULL DATA!**")
+st.write('---')
+
+st.write(f"{sub_font}<h4> <u>Overview of Vaccine Global Analysis (Bubble Chart) </u> </h4>", unsafe_allow_html = True)
+st.write("Analysis on where vaccines are administered globally (based on what the user filters) through the view of bubble chart")
+st.write("The idea behind this chart is the same as `interactive_map.py` but easier visualization of the size differences.")
+
+st.write(f"{sub_font}<h4><u>Features:</u></h4>", unsafe_allow_html = True)
+st.write(""" 
+- No Filtering: the goal of this visualization is to see what vaccine is the most popular by examining the size of the bubble
+- Bubbles: when you hover over each bubble you'll see the vaccine name followed by its corresponding # of countries who use it
+    - The x-axis is the unique vaccine string object values from column VACCINES_USED 
+    - The y-axis is the # of countries that use that corresponding vaccine
+    - Size of bubble is the # of countries that use that corresponding vaccine (the bigger the bubble, the higher distribution of the vaccine)
+- Color: All 41 vaccines correspond to a color as indicated by the legend on the right-hand side
+- Navigating this chart: click on full-screen button (2 arrow pinching) when hovering over the chart to have a better view of the data
+- List: a list of where each vaccine is administered and the total vaccines administered by country
+""")
+         
+st.write(f"{sub_font}<h4><u>Some Observations:</u></h4>", unsafe_allow_html = True)
+st.write(r"""
+As stated before: My hypothesis remains the same, the more effective the vaccine is, the more popular distribution it is. 
+
+- AstraZeneca - Vaxzevria, Moderna - Spikevax, Janssen - Ad26.COV 2-S, and Pfizer BioNTech - Comirnaty are the widest 
+distributed vaccine in the world with Pfizer taking the top maximum. 
+""")
+         
+st.write(f"{sub_font}<h4><u>Next Steps:</u></h4>", unsafe_allow_html = True)
+st.write(""" 
+Let's examine if our hypothesis is correct. Analyzing the percentage of breakthrough cases for each country can provide additional 
+information on the effectiveness of the vaccines in that country. Run file `heatmap_breakthrough.py`  
+""")
+st.write('---')
 
 
 def main():
